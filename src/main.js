@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Buefy from 'buefy'
+
+Vue.use(Buefy, {
+  defaultIconPack: 'fas',
+  defaultContainerElement: '#content'
+})
 
 
 Vue.config.productionTip = false

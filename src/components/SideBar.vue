@@ -15,6 +15,48 @@
 
     <div class="w3-padding-64 w3-large">
       <a routerLink="/about-us" class="item w3-bar-item w3-button w3-hover-red">About Us</a>
+    	<b-dropdown v-model="navigation" position="is-bottom-right" aria-role="menu">
+                    <a
+                        class="navbar-item item w3-bar-item w3-button w3-hover-red dropdown-item"
+                        slot="trigger"
+                        role="button">
+                        <span>Menu</span>
+                        <b-icon icon="menu-down"></b-icon>
+                    </a>
+
+                    <b-dropdown-item custom aria-role="menuitem">
+                        Logged as <b>Rafael Beraldo</b>
+                    </b-dropdown-item>
+                    <hr class="dropdown-divider">
+                    <b-dropdown-item has-link aria-role="menuitem">
+                        <a href="https://google.com" target="_blank">
+                            <b-icon icon="link"></b-icon>
+                            Google (link)
+                        </a>
+                    </b-dropdown-item>
+                    <b-dropdown-item value="home" aria-role="menuitem">
+                        <b-icon icon="home"></b-icon>
+                        Home
+                    </b-dropdown-item>
+                    <b-dropdown-item value="products" aria-role="menuitem">
+                        <b-icon icon="cart"></b-icon>
+                        Products
+                    </b-dropdown-item>
+                    <b-dropdown-item value="blog" disabled aria-role="menuitem">
+                        <b-icon icon="book-open"></b-icon>
+                        Blog
+                    </b-dropdown-item>
+                    <hr class="dropdown-divider" aria-role="menuitem">
+                    <b-dropdown-item value="settings">
+                        <b-icon icon="settings"></b-icon>
+                        Settings
+                    </b-dropdown-item>
+                    <b-dropdown-item value="logout" aria-role="menuitem">
+                        <i class="fa fab-sign-out"></i>
+                        Logout
+                    </b-dropdown-item>
+        </b-dropdown>
+
       <div class="item w3-bar-item w3-button w3-white w3-hover-white">
         <div class="w3-hover-white w3-dropdown-content">
 			<button class="w3-button">Products</button>
@@ -26,6 +68,17 @@
         	<a href="#" class="item w3-bar-item w3-button w3-hover-red dropdown-item">2016 Editions</a>
         </div>
       </div>
+
+		<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <span>Content</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+</div>
 
       <div class="item w3-bar-item w3-button w3-white w3-hover-white" suiDropdown>
         <span class="text">Brands</span>
@@ -93,3 +146,34 @@ background-color: white;
 }
 </style>
 
+<style lang="scss">
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #FF2724;
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "twitter": ($twitter, $twitter-invert)
+);
+
+// Links
+$link: $red;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+
+</style>
