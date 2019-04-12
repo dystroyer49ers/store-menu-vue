@@ -3,238 +3,192 @@
     <title>Storemenu/Home</title>
 
     <!-- Sidebar/menu -->
-    <SideBar />
+	
+    	<SideBar />
 
-    <!-- Top menu on small screens  -->
-    <header class="bar top hidelarge red xlarge">
-      <div class="container" id="head">
-        <h1 id="title">
-          Welcome to Parts and Co
-          <i class="fas fa-wrench"></i>
-        </h1>
-      </div>
-      <a
-        id="toggole"
-        href="javascript:void(0)"
-        class="bar-item button padding24 left"
-        onclick="_open()"
-      >
-        <i class="fas fabars"></i>
-      </a>
-    </header>
 
-     <!-- Overlay effect when opening sidebar on small screens  -->
-    <div class="overlay hidelarge" onclick="_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <header class="w3-bar w3-top w3-hide-large w3-red w3-xlarge">
+	<div class="w3-container" id="head">
+		<h1 id="title">Welcome to Parts and Co
+			<i class="fas fa-wrench"></i>
+		</h1>
+	</div>
+	<a id="toggole" href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-left"  @click="w3_open()">
+		<i class="fas fa-bars"></i>
+	</a>
+</header>
 
-    <!-- <! !PAGE CONTENT! > -->
-    <div class="main" style="margin-left:270px">
-      <!-- <! Push down content on small screens > -->
-      <div class="hidelarge" style="margin-top:83px"></div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" @click="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-      <!-- <! Top header > -->
-      <header class="container xlarge">
-        <div class="container hidemedium hidesmall red">
-          <h1 id="title">
-            Welcome to Parts and Co
-            <i class="fas fawrench"></i>
-          </h1>
-        </div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:270px">
 
-        <!--Dashboard-->
-        <!-- <dashboard></dashboard> -->
-      </header>
+	<!-- Push down content on small screens -->
+	<div class="w3-hide-large" style="margin-top:83px"></div>
 
-      <div id="seller" class="container xlarge">
-        <div class="displaycontainer container">
-          <img src="../../assets/img/controller.jpg" alt="Microcontroller" style="width: 100%;"> 
-          <div class="displaytopleft textwhite" style="padding:24px 48px">
-            <h1 class="jumbo hidesmall">New arrivals</h1>
-            <h1 class="hidelarge hidemedium">New arrivals</h1>
-            <h1 class="hidesmall">2017 Editions</h1>
-            <p>
-              <a href="#products" class="button hoverred paddinglarge large">SHOP NOW</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="container textgrey" id="products">
-        <p>8 items</p>
-      </div>
+	<!-- Top header -->
+	<header class="w3-container w3-xlarge">
+		<div class="w3-container w3-hide-medium w3-hide-small w3-red">
+			<h1 id="title">Welcome to Parts and Co
+				<i class="fas fa-wrench"></i>
+			</h1>
+		</div>
 
-      <!-- <! Product grid > -->
-      <!-- <div class="row">
-        <div *ngFor="let products of products" id="productgallery">
-          <div class="col l3 s6">
-            <div class="container">
-              <a id="imgr" [routerLink]="['/products']">
-                <img src="{{products.img}}" style="width:160px; height: 160px;">
-              </a>
-              <p>
-                {{ products.name }}
-                <br>
-                <a routerLink="{{products.byLink}}">
-                  Product by
-                  <em>{{products.by}}</em>
-                </a>
-                <br>
-                <b id="{{products.NewOrSale}}">{{products.cost | currency: "£" }}</b>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>-->
+		<!--Dashboard-->
+		<dashboard></dashboard> 
+	</header>
 
-      <!-- Subscribe section -->
-      <div class="container red padding16">
-        <h1>Subscribe</h1>
-        <p>To get special offers and VIP treatment:</p>
-        <p>
-          <input
-            class="input border"
-            type="text"
-            placeholder="Enter email"
-            style="width:100%"
-          >
-        </p>
-        <button type="button" class="button marginbottom black">Subscribe</button>
-      </div>
 
-      <!-- Footer -->
-      <footer class="padding64 white small center" id="footer">
-        <div class="rowpadding">
-          <div class="col s4 textred" id="contact">
-            <h4>Contact</h4>
-            <p>Questions? Go ahead.</p>
-            <form action="/action_page.php" target="_blank">
-              <p>
-                <input
-                  class="input border c textblack"
-                  type="text"
-                  placeholder="Name"
-                  name="Name"
-                  required
-                >
-              </p>
-              <p>
-                <input
-                  class="input border c textblack"
-                  type="text"
-                  placeholder="Email"
-                  name="Email"
-                  required
-                >
-              </p>
-              <p>
-                <input
-                  class="input border c textblack"
-                  type="text"
-                  placeholder="Subject"
-                  name="Subject"
-                  required
-                >
-              </p>
-              <p>
-                <input
-                  class="input border c textblack"
-                  type="text"
-                  placeholder="Message"
-                  name="Message"
-                  required
-                >
-              </p>
-              <button type="submit" class="button block red">Send</button>
-            </form>
-          </div>
+	<div id="seller" class="w3-container w3-xlarge">
+		<div class="w3-display-container w3-container">
+			<img src="../../assets/img/controller.jpg" alt="Microcontroller" style="width: 100%;" />
+			<div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+				<h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+				<h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+				<h1 class="w3-hide-small">2017 Editions</h1>
+				<p>
+					<a href="#products" class="w3-button w3-hover-red w3-padding-large w3-large">SHOP NOW</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="w3-container w3-text-grey" id="products">
+		<p>8 items</p>
+	</div>
 
-          <div class="col s4 white textred" id="about">
-            <h4>About</h4>
-            <p>
-              <a href="/aboutus">About us</a>
-            </p>
-            <p>
-              <a href="#">We're hiring</a>
-            </p>
-            <p>
-              <a href="#">Support</a>
-            </p>
-            <p>
-              <a href="#">Find store</a>
-            </p>
-            <p>
-              <a href="#">Shipment</a>
-            </p>
-            <p>
-              <a href="#">Payment</a>
-            </p>
-            <p>
-              <a href="#">Gift card</a>
-            </p>
-            <p>
-              <a href="#">Return</a>
-            </p>
-            <p>
-              <a href="#">Help</a>
-            </p>
-          </div>
+	<!-- Product grid -->
+	<!-- <div class="w3-row">
+		<div *ngFor="let products of products" id="product-gallery">
+			<div class="w3-col l3 s6">
+				<div class="w3-container">
+					<a id="imgr" [routerLink]="['/products']">
+						<img src="{{products.img}}"  style="width:160px; height: 160px;">
+					</a>
+					<p>{{ products.name }}
+						<br>
+						<a routerLink="{{products.byLink}}">
+							Product by <em>{{products.by}}</em>
+						</a>
+						<br>
+						<b id="{{products.NewOrSale}}">{{products.cost | currency: "£" }}</b>
+					</p>
+				</div>	
+			</div>
+		</div> 
+	</div> --> 
 
-          <div class="col s4 white textred" id="store">
-            <h4>Store</h4>
-            <p>
-              <i class="fas fafw famapmarker"></i>Parts and Co
-              <i class="fas fawrench"></i>
-            </p>
-            <p>
-              <i class="fas fafw faphone"></i> 0044123123
-            </p>
-            <p>
-              <i class="fas fafw faenvelope"></i> ex@mail.com
-            </p>
-            <h4>We accept</h4>
-            <p>
-              <i class="fab fafw faccamex"></i> Amex
-            </p>
-            <p>
-              <i class="fas fafw facreditcard"></i> Credit Card
-            </p>
-            <br>
-            <i class="fab fafacebookf hoveropacity large"></i>
-            <i class="fab fainstagram hoveropacity large"></i>
-            <i class="fab fasnapchat hoveropacity large"></i>
-            <i class="fab fapinterestp hoveropacity large"></i>
-            <i class="fab fatwitter hoveropacity large"></i>
-            <i class="fab falinkedin hoveropacity large"></i>
-            <i class="fab fagoogleplusg hoveropacity large"></i>
-          </div>
-        </div>
-      </footer>
 
-      <div class="red center padding24">&copy; Made By Zachary Koyama</div>
+	<!-- Subscribe section -->
+	<div class="w3-container w3-red w3-padding-16">
+		<h1>Subscribe</h1>
+		<p>To get special offers and VIP treatment:</p>
+		<p>
+			<input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%">
+		</p>
+		<button type="button" class="w3-button w3-margin-bottom w3-black">Subscribe</button>
+	</div>
 
-      <!-- End page content -->
-    </div>
+	<!-- Footer -->
+	<footer class="w3-padding-64 w3-white w3-small w3-center " id="footer">
+		<div class="w3-row-padding">
+			<div class="w3-col s4 w3-text-red" id="contact">
+				<h4>Contact</h4>
+				<p>Questions? Go ahead.</p>
+				<form action="/action_page.php" target="_blank">
+					<p>
+						<input class="w3-input w3-border w3-c w3-text-black" type="text" placeholder="Name" name="Name" required>
+					</p>
+					<p>
+						<input class="w3-input w3-border w3-c w3-text-black" type="text" placeholder="Email" name="Email" required>
+					</p>
+					<p>
+						<input class="w3-input w3-border w3-c w3-text-black" type="text" placeholder="Subject" name="Subject" required>
+					</p>
+					<p>
+						<input class="w3-input w3-border w3-c w3-text-black" type="text" placeholder="Message" name="Message" required>
+					</p>
+					<button type="submit" class="w3-button w3-block w3-red">Send</button>
+				</form>
+			</div>
 
-    <!-- Newsletter Modal -->
-    <div id="newsletter" class="modal">
-      <div class="modalcontent animatezoom" style="padding:32px">
-        <div class="container white center">
-          <i
-            onclick="document.getElementById('newsletter').style.display='none'"
-            class="fas fatimes fa2x right"
-          ></i>
-          <h2 class="wide">NEWSLETTER</h2>
-          <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-          <p>
-            <input class="input border" type="text" placeholder="Enter email">
-          </p>
-          <button
-            type="button"
-            class="button paddinglarge red marginbottom"
-            onclick="document.getElementById('newsletter').style.display='none'"
-          >Sign up!</button>
-        </div>
-      </div>
-    </div>
-  </div>
+			<div class="w3-col s4 w3-white w3-text-red" id="about">
+				<h4>About</h4>
+				<p>
+					<a href="/about-us">About us</a>
+				</p>
+				<p>
+					<a href="#">We're hiring</a>
+				</p>
+				<p>
+					<a href="#">Support</a>
+				</p>
+				<p>
+					<a href="#">Find store</a>
+				</p>
+				<p>
+					<a href="#">Shipment</a>
+				</p>
+				<p>
+					<a href="#">Payment</a>
+				</p>
+				<p>
+					<a href="#">Gift card</a>
+				</p>
+				<p>
+					<a href="#">Return</a>
+				</p>
+				<p>
+					<a href="#">Help</a>
+				</p>
+			</div>
+
+			<div class="w3-col s4 w3-white w3-text-red" id="store">
+				<h4>Store</h4>
+				<p>
+					<i class="fas fa-fw fa-map-marker"></i>Parts and Co
+					<i class="fas fa-wrench"></i>
+				</p>
+				<p>
+					<i class="fas fa-fw fa-phone"></i> 0044123123</p>
+				<p>
+					<i class="fas fa-fw fa-envelope"></i> ex@mail.com</p>
+				<h4>We accept</h4>
+				<p>
+					<i class="fab fa-fw fa-cc-amex"></i> Amex</p>
+				<p>
+					<i class="fas fa-fw fa-credit-card"></i> Credit Card</p>
+				<br>
+				<i class="fab fa-facebook-f w3-hover-opacity w3-large"></i>
+				<i class="fab fa-instagram w3-hover-opacity w3-large"></i>
+				<i class="fab fa-snapchat w3-hover-opacity w3-large"></i>
+				<i class="fab fa-pinterest-p w3-hover-opacity w3-large"></i>
+				<i class="fab fa-twitter w3-hover-opacity w3-large"></i>
+				<i class="fab fa-linkedin w3-hover-opacity w3-large"></i>
+				<i class="fab fa-google-plus-g w3-hover-opacity w3-large"></i>
+			</div>
+		</div>
+	</footer>
+
+	<div class="w3-red w3-center w3-padding-24">&copy; Made By Zachary Koyama</div>
+
+	<!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+	<div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+		<div class="w3-container w3-white w3-center">
+			<i onclick="document.getElementById('newsletter').style.display='none'" class="fas fa-times fa-2x w3-right"></i>
+			<h2 class="w3-wide">NEWSLETTER</h2>
+			<p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+			<p>
+				<input class="w3-input w3-border" type="text" placeholder="Enter e-mail">
+			</p>
+			<button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Sign up!</button>
+		</div>
+	</div>
+</div>
 </template>
 
 <script>
@@ -244,8 +198,21 @@ export default {
 	name: 'HomePage',
   	components: {
     	SideBar
-  	}
-}
+  	},
+	methods: {
+
+		// Open and close sidebar
+		w3_open : function w3_open() {
+  			document.getElementById("mySidebar").style.display = "block";
+  			document.getElementById("myOverlay").style.display = "block";
+		},
+
+		w3_close : function w3_close() {
+  			document.getElementById("mySidebar").style.display = "none";
+  			document.getElementById("myOverlay").style.display = "none";
+		}
+	}
+};
 </script>
 
 <style>

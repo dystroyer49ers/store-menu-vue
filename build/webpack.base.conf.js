@@ -24,6 +24,7 @@ module.exports = {
   entry: {
     app: './src/main.js',
     'styles': [
+      './public/w3-css/w3.css',
       './public/fontawesome-free-5.8.1-web/css/all.min.css',
       './public/fontawesome-free-5.8.1-web/css/brands.min.css',
       './public/fontawesome-free-5.8.1-web/css/regular.min.css'
